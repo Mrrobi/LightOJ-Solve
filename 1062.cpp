@@ -69,7 +69,7 @@ bool check(double mid)
     double h2 = sqrt((y*y)-(mid*mid));
     double mil = (1.0/h1)+(1.0/h2);
     double cc = 1.0/mil;
-    if(cc<c)
+    if(cc>=c)
     {
         return true;
     }
@@ -89,14 +89,15 @@ int main()
         double lo = 0.0,hi = max(x,y);
         int j = 1000;
         while(j--){
+
             double mid = (lo+hi)/2;
             if(check(mid)){
-                hi = mid;
-            }else{
-
                 lo = mid;
+            }else{
+                hi = mid;
             }
         }
+        cout<<setprecision(8);
         case((i+1),lo);
     }
 
